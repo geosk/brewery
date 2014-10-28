@@ -1,0 +1,359 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="left"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tabStripEnabled="true" >
+
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+											 							
+                <TableLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:id="@+id/tableRow1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="true" >
+                    
+							<ImageButton
+							    android:id="@+id/btnFromBrewery"
+							    android:layout_width="30dp"
+							    android:layout_height="30dp"
+ 							    android:layout_span="8"
+							    android:onClick="btnFromBreweryClicked"
+							    android:src="@drawable/btn_del"/>
+							
+                        <TableRow
+                            android:id="@+id/tableRow2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="true" >
+														
+							<ImageButton
+							    android:id="@+id/btnToBrewery"
+							    android:layout_width="30dp"
+							    android:layout_height="30dp"
+ 							    android:layout_span="8"
+							    android:onClick="btnToBreweryClicked"
+							    android:src="@drawable/btn_del"/>
+						</TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="true" >
+														
+							<ImageButton
+							    android:id="@+id/btnFromInternet"
+							    android:layout_width="30dp"
+							    android:layout_height="30dp"
+ 							    android:layout_span="8"
+							    android:onClick="btnFromInternetClicked"
+							    android:src="@drawable/btn_del"/>
+						</TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="true" >
+														
+							<ImageButton
+							    android:id="@+id/btnToInternet"
+							    android:layout_width="30dp"
+							    android:layout_height="30dp"
+ 							    android:layout_span="8"
+							    android:onClick="btnToInternetClicked"
+							    android:src="@drawable/btn_del"/>
+						</TableRow>
+                    
+                        <TableRow
+                            android:id="@+id/tableRow5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="true" >
+
+ 							<TextView
+ 							    android:id="@+id/steps"
+ 							    android:layout_width="wrap_content"
+ 							    android:layout_height="wrap_content"
+ 							    android:layout_gravity="center"
+ 							    android:layout_span="8"
+ 							    android:layout_marginRight="5dp"
+ 							    android:layout_marginTop="5dp"
+ 							    android:text="Steps" />
+                         </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tableRow6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" 
+                            android:layout_gravity="center">
+							<ScrollView android:layout_width="match_parent"
+					            android:layout_height="wrap_content">                    		
+
+					            <TableLayout
+					                android:layout_width="wrap_content"
+					                android:layout_height="200dp"
+					                android:isScrollContainer="true"
+					                android:layout_gravity="center">
+
+			                        <TableRow
+			                            android:id="@+id/stableRow1"
+			                            android:layout_width="wrap_content"
+			                            android:layout_height="wrap_content" android:background="@drawable/border" >
+			 							<TextView android:layout_width="wrap_content"
+			                    			android:layout_height="wrap_content" android:id="@+id/active"
+			                    			android:text="Cur" android:layout_column="1"
+			                    			android:layout_gravity="center"/>
+			 							<TextView android:layout_width="wrap_content"
+			                    			android:layout_height="wrap_content" android:id="@+id/step_id"
+			                    			android:text="Step" android:layout_column="2"  
+			                    			android:background="@drawable/border" />
+			 							<TextView android:layout_width="wrap_content"
+			                    			android:layout_height="wrap_content" android:id="@+id/temperature"
+			                    			android:text="t'C" android:layout_column="3"  
+			                    			android:background="@drawable/border" />
+			 							<TextView android:layout_width="wrap_content"
+			                    			android:layout_height="wrap_content" android:id="@+id/time"
+			                    			android:text="Time" android:layout_column="4"  
+			                    			android:background="@drawable/border" />
+			 							<TextView android:layout_width="wrap_content"
+			                    			android:layout_height="wrap_content" android:id="@+id/wait"
+			                    			android:text="Wait" android:layout_column="5"  
+			                    			android:background="@drawable/border" />
+			 							<TextView android:layout_width="wrap_content"
+			                    			android:layout_height="wrap_content" android:id="@+id/const_temp"
+			                    			android:text="Fix" android:layout_column="6"  
+			                    			android:background="@drawable/border" />
+			 							</TableRow>
+			                        <TableRow
+			                            android:id="@+id/stableRow2"
+			                            android:layout_width="wrap_content"
+			                            android:layout_height="wrap_content" android:background="@drawable/border" >
+			 							<TextView android:layout_width="30dp"
+			                    			android:layout_height="30dp" android:id="@+id/activeRow2"
+			                    			android:text=">" android:layout_column="1" 
+			                    			android:layout_gravity="center"/>
+			 							<TextView android:layout_width="30dp"
+			                    			android:layout_height="30dp" android:id="@+id/step_idRow2"
+			                    			android:text="1" android:layout_column="2"  
+			                    			android:background="@drawable/border" />
+			 							<TextView android:layout_width="30dp"
+			                    			android:layout_height="30dp" android:id="@+id/temperatureRow2"
+			                    			android:text="20" android:layout_column="3"  
+			                    			android:background="@drawable/border" />
+			 							<TextView android:layout_width="30dp"
+			                    			android:layout_height="30dp" android:id="@+id/timeRow2"
+			                    			android:text="2" android:layout_column="4"  
+			                    			android:background="@drawable/border" />
+			 							<TextView android:layout_width="30dp"
+			                    			android:layout_height="30dp" android:id="@+id/waitRow2"
+			                    			android:text="1" android:layout_column="5"  
+			                    			android:background="@drawable/border" />
+			 							<TextView android:layout_width="30dp"
+			                    			android:layout_height="30dp" android:id="@+id/const_tempRow2"
+			                    			android:text="0" android:layout_column="6"  
+			                    			android:background="@drawable/border" />
+
+			 							<ImageButton
+			 							    android:id="@+id/imageButton1"
+			 							    android:layout_width="30dp"
+			 							    android:layout_height="30dp"
+			 							    android:layout_column="7"
+			 							    android:onClick="btnEditClicked"
+			 							    android:src="@drawable/btn_edit" />
+
+			 							<ImageButton
+			 							    android:id="@+id/imageButton1"
+			 							    android:layout_width="30dp"
+			 							    android:layout_height="30dp"
+			 							    android:layout_column="8"
+			 							    android:onClick="btnDelClicked"
+			 							    android:src="@drawable/btn_del"/>
+
+									</TableRow>
+			                        <TableRow
+			                            android:id="@+id/stableRow2"
+			                            android:layout_width="wrap_content"
+			                            android:layout_height="wrap_content">
+			 							<ImageButton
+			 							    android:id="@+id/imageButton1"
+			 							    android:layout_width="30dp"
+			 							    android:layout_height="30dp"
+			 							    android:layout_column="1"
+			 							    android:onClick="btnAddClicked"
+			 							    android:src="@drawable/btn_del"/>
+			                        </TableRow>
+			                    </TableLayout>
+	                    	</ScrollView>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tableRow7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+ 							<ImageButton
+ 							    android:id="@+id/btn_go"
+ 							    android:layout_width="wrap_content"
+ 							    android:layout_height="wrap_content"
+ 							    android:onClick="btnStartClicked"
+ 							    android:src="@drawable/ic_launcher" 
+ 							    android:layout_gravity="center"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tableRow8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" 
+                            android:layout_gravity="left">
+							<RelativeLayout android:layout_width="wrap_content"
+							    android:layout_height="wrap_content">
+
+								<ImageView
+								    android:id="@+id/imageView1"
+								    android:layout_width="50dp"
+								    android:layout_height="50dp"
+								    android:layout_gravity="left"
+								    android:src="@drawable/potwithfire" />
+
+	                            <TableLayout
+	        	                		android:layout_width="wrap_content"
+	            	            		android:layout_height="wrap_content"
+	 							    	android:layout_toRightOf="@+id/imageView1"
+	 							    	android:background="@drawable/border">
+										<TableRow
+				                            android:id="@+id/stableRow1"
+				                            android:layout_width="wrap_content"
+				                            android:layout_height="wrap_content"
+				                            android:layout_gravity="right">
+				 							<TextView android:layout_width="match_parent"
+				                    			android:layout_height="wrap_content" android:id="@+id/cur_temperature"
+				                    			android:text="Temperature:"/>
+				 							<TextView android:layout_width="match_parent"
+				                    			android:layout_height="wrap_content" android:id="@+id/cur_temperature"
+				                    			android:text="40'C(45'C)"
+				                    			android:layout_gravity="right"/>
+											</TableRow>
+				                        <TableRow
+				                            android:id="@+id/stableRow1"
+				                            android:layout_width="wrap_content"
+				                            android:layout_height="wrap_content" 
+				                            android:layout_gravity="left">
+				 							<TextView android:layout_width="match_parent"
+				                    			android:layout_height="wrap_content" android:id="@+id/cur_time"
+				                    			android:text="Step time(min):"/>
+				 							<TextView android:layout_width="match_parent"
+				                    			android:layout_height="wrap_content" android:id="@+id/cur_time"
+				                    			android:text="1"
+				                    			android:layout_gravity="right"/>
+				 					 	</TableRow>
+				                      	<TableRow
+				                            android:id="@+id/stableRow1"
+				                            android:layout_width="wrap_content"
+				                            android:layout_height="wrap_content" 
+				                            android:layout_gravity="left">
+				 							<TextView android:layout_width="match_parent"
+					                    			android:layout_height="wrap_content" android:id="@+id/total_time"
+					                    			android:text="Total time(min):"/>
+				 							<TextView android:layout_width="match_parent"
+					                    			android:layout_height="wrap_content" android:id="@+id/total_time"
+					                    			android:text="10"
+					                    			android:layout_gravity="right"/>
+			 							</TableRow>
+		    	              	</TableLayout>
+							</RelativeLayout>
+                         </TableRow>
+                         </TableRow>
+                    </TableLayout>
+                    <TableLayout
+                        android:id="@+id/tab2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:id="@+id/tab2_tableRow1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="true" >
+
+ 							<TextView
+ 							    android:id="@+id/devices"
+ 							    android:layout_width="wrap_content"
+ 							    android:layout_height="wrap_content"
+ 							    android:layout_gravity="center"
+ 							    android:layout_marginRight="5dp"
+ 							    android:layout_marginTop="5dp"
+ 							    android:text="Devices" />
+
+                         </TableRow>
+                        <TableRow
+                            android:id="@+id/tab2_tableRow2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="true" >
+
+ 							<TextView
+ 							    android:id="@+id/device"
+ 							    android:layout_width="wrap_content"
+ 							    android:layout_height="wrap_content"
+ 							    android:layout_gravity="center"
+ 							    android:layout_marginRight="5dp"
+ 							    android:layout_marginTop="5dp"
+ 							    android:text="Device1" />
+
+                         </TableRow>
+                        </TableLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+ 							<TextView
+ 							    android:id="@+id/about"
+ 							    android:layout_width="wrap_content"
+ 							    android:layout_height="wrap_content"
+ 							    android:layout_gravity="center"
+ 							    android:layout_marginRight="5dp"
+ 							    android:layout_marginTop="5dp"
+ 							    android:text="About text" />
+
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</RelativeLayout>
